@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createDrawerNavigator} from '@react-navigation/drawer'
-import {useFonts} from 'expo-font';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen'
 import { Provider, useSelector } from 'react-redux';
 import store, { persister } from './src/Redux/store';
@@ -22,20 +22,20 @@ const Drawer = createDrawerNavigator();
 const InitialStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
-          name='LocationScreen'
-          component={LocationScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen 
-          name='AddLocationScreen'
-          component={AddLocation}
-          options={{
-            headerShown: false,
-          }}
-        />
+      <Stack.Screen
+        name='LocationScreen'
+        component={LocationScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='AddLocationScreen'
+        component={AddLocation}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   )
 }
@@ -47,20 +47,20 @@ const HomeStack = () => {
       useLegacyImplementation
       drawerContent={() => <CustomDrawer />}
     >
-      <Drawer.Screen 
+      <Drawer.Screen
         name='HomeScreen'
         component={HomeScreen}
         options={{
           headerShown: false
         }}
       />
-      <Drawer.Screen 
-          name='AddLocationScreen'
-          component={AddLocation}
-          options={{
-            headerShown: false,
-          }}
-        />
+      <Drawer.Screen
+        name='AddLocationScreen'
+        component={AddLocation}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Drawer.Navigator>
   )
 }
@@ -85,10 +85,10 @@ const App = () => {
     if (fontsLoaded) {
       hideSpalshScreen();
     }
-    
+
   }, [fontsLoaded])
 
-  if(!fontsLoaded) {
+  if (!fontsLoaded) {
     return;
   }
 
@@ -105,7 +105,7 @@ export default () => {
       <PersistGate loading={null} persistor={persister} >
         <App />
       </PersistGate>
-      
+
     </Provider>
   )
 };
