@@ -39,7 +39,7 @@ export const CustomDrawer = () => {
           <Text
             style={[
               styles.cityText,
-              
+
             ]}
           >
             {item?.location?.name}
@@ -72,7 +72,7 @@ export const CustomDrawer = () => {
         </Text>
       </TouchableOpacity>
       <View style={styles.divider} />
-      <Text style={[styles.drawerLabel,{marginBottom: hp(10)}]}>{`Locations`}</Text>
+      <Text style={[styles.drawerLabel, { marginBottom: hp(10) }]}>{`Locations`}</Text>
       {cityList?.length >= 1 && renderCityList()}
     </DrawerContentScrollView>
   );
