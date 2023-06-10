@@ -12,14 +12,13 @@ import Loader from "../Component/Loader";
 import { COLORS } from "../Utils/Colors";
 
 const LocationScreen = () => {
-  // Objects
   const navigation = useNavigation();
 
   // Redux selector
   const data = useSelector((state) => state.weather.weatherData);
   const isLoading = useSelector((state) => state.weather.isLoading);
 
-  // navigation to home screen after updating redux state
+  // Navigation to home screen after updating redux state
   useEffect(() => {
     if (data.length >= 1) {
       navigation.navigate("HomeScreen");

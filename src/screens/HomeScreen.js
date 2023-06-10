@@ -32,7 +32,7 @@ const HomeScreen = () => {
   const weatherData = useSelector((state) => state.weather.weatherData);
   const selectedCity = useSelector((state) => state.weather.selectedCity);
   const isLoading = useSelector((state) => state.weather.isLoading);
-  // State variable
+  // Local state
   const [hourlyData, setHourlyData] = useState({});
   const [forecastData, setForecastData] = useState({});
   const [refreshing, setRefreshing] = useState(false);
@@ -86,7 +86,7 @@ const HomeScreen = () => {
       Alert.alert("Error", weatherResponse?.error?.message);
       setRefreshing(false);
     } else {
-      
+
       let copyOfWeatherData = weatherData;
       copyOfWeatherData[selectedCity] = weatherResponse;
       dispatch(setWeatherData(copyOfWeatherData));
@@ -101,7 +101,7 @@ const HomeScreen = () => {
     setTimeout(
       () => flatListRef.current?.scrollToIndex({ index: error.index }),
       100
-    ); 
+    );
   };
 
   // On remove city
@@ -198,31 +198,31 @@ const HomeScreen = () => {
       <View style={styles.alertContainer}>
         <Text style={styles.summaryTitle}>Alert</Text>
         <View style={styles.alertInnerContainer}>
-          <ScrollView 
-            nestedScrollEnabled 
-            pagingEnabled 
+          <ScrollView
+            nestedScrollEnabled
+            pagingEnabled
             horizontal
-            disableIntervalMomentum={ true } 
+            disableIntervalMomentum={true}
             snapToInterval={DEVICE_WIDTH - wp(70)}
             showsHorizontalScrollIndicator={false}
           >
-            {weatherAlerts?.map((e,i) => {
+            {weatherAlerts?.map((e, i) => {
               return (
-                <View style={{ width: DEVICE_WIDTH - wp(70),  }}>
-                <Text numberOfLines={2} style={styles.alertHeadline}>{e.headline}</Text>
-                <Text style={styles.alertDesc}>{e.desc}</Text>
-              </View>
+                <View style={{ width: DEVICE_WIDTH - wp(70), }}>
+                  <Text numberOfLines={2} style={styles.alertHeadline}>{e.headline}</Text>
+                  <Text style={styles.alertDesc}>{e.desc}</Text>
+                </View>
               )
             })}
           </ScrollView>
-          {weatherAlerts.length > 1 && <View style={styles.pagingContainer}> 
-              <Text style={styles.pagingText}>{`${defaultPagination + 1} / ${weatherAlerts.length}`}</Text>
+          {weatherAlerts.length > 1 && <View style={styles.pagingContainer}>
+            <Text style={styles.pagingText}>{`${defaultPagination + 1} / ${weatherAlerts.length}`}</Text>
           </View>}
         </View>
       </View>
     );
   }
-  
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar
@@ -338,7 +338,7 @@ const HomeScreen = () => {
             style={{ width: "100%", marginVertical: hp(16) }}
             showsHorizontalScrollIndicator={false}
             onScrollToIndexFailed={scrollToIndexFailed}
-            // extraData={weatherData}
+          // extraData={weatherData}
           />
         </View>
         <View style={styles.summaryContainer}>
