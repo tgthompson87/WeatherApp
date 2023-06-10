@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   weatherData: [],
@@ -22,5 +22,5 @@ const weatherSlice = createSlice({
   },
 });
 
-export const {setWeatherData, setIsLoading, setSelectedCity} = weatherSlice.actions;
+export const { setWeatherData, setIsLoading, setSelectedCity } = weatherSlice.actions;
 export default weatherSlice.reducer;
