@@ -9,8 +9,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { setSelectedCity } from "../Redux/weatherSlice";
 
 export const CustomDrawer = () => {
-
-  // Objects
   const dispatch = useDispatch();
   const navigation = useNavigation();
 

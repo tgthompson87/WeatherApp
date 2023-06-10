@@ -4,7 +4,7 @@ import { COLORS } from '../Utils/Colors';
 import { hp, wp } from '../Utils/ResponsiveLayout';
 import { FONTS } from '../Utils/Fonts';
 
-const Loader = ({title= 'Fetching Weather'}) => {
+const Loader = ({ title = 'Fetching Weather' }) => {
   return (
     <View style={styles.container}>
       <ActivityIndicator size="large" color={COLORS.YELLOW_COLOR} />
