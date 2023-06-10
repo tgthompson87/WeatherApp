@@ -1,4 +1,4 @@
-import {Dimensions} from 'react-native';
+import { Dimensions } from 'react-native';
 import {
   heightPercentageToDP as hp2dp,
   widthPercentageToDP as wp2dp,

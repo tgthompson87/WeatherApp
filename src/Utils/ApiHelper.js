@@ -11,7 +11,7 @@ export const fetchWeather = async (city) => {
 
   try {
     const response = await fetch(url, { method: 'GET' });
-    const responseJson = await response.json();
+    const responseJson = await response?.json();
     data = responseJson;
   } catch (error) {
     Alert.alert('Error', error?.message);
